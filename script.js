@@ -15,7 +15,21 @@ function calculateBirthdayInfo(birthday) {
 
 function showBirthdayInfo(name, birthday) {
     const { daysLeft, yearsOld } = calculateBirthdayInfo(birthday);
-    document.getElementById('result').innerHTML = `${name}'s birthday:<br>${daysLeft} days left<br>Will turn ${yearsOld} years old`;
+    
+    let message;
+    if (daysLeft === 0) {
+        message = `Hurra! Idag fyller ${name} ${yearsOld} år! 🎉 Dags att fira!`;
+    } else if (daysLeft === 1) {
+        message = `Åh, så spännande! Imorgon fyller ${name} ${yearsOld} år! Bara en natts sömn kvar!`;
+    } else if (daysLeft <= 7) {
+        message = `Snart dags för kalas! Om bara ${daysLeft} dagar fyller ${name} ${yearsOld} år. Ska vi börja planera?`;
+    } else if (daysLeft <= 30) {
+        message = `Oj, vad tiden går! Om ${daysLeft} dagar fyller ${name} ${yearsOld} år. Dags att börja fundera på present?`;
+    } else {
+        message = `Det är ${daysLeft} dagar kvar tills ${name} fyller ${yearsOld} år. Vi har gott om tid att planera något riktigt kul!`;
+    }
+    
+    document.getElementById('result').innerHTML = message;
     
     // Change theme
     document.body.className = name.toLowerCase() + '-theme';
