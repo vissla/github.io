@@ -18,15 +18,11 @@ function showBirthdayInfo(name, birthday) {
     
     let message;
     if (daysLeft === 0) {
-        message = `Hurra! Idag fyller ${name} ${yearsOld} år! 🎉 Dags att fira!`;
+        message = `<span class="name">${name}</span>Hurra! Idag är det ${name}s födelsedag! Dags att fira med godis, lek och massvis av kul! Wohoo!`;
     } else if (daysLeft === 1) {
-        message = `Åh, så spännande! Imorgon fyller ${name} ${yearsOld} år! Bara en natts sömn kvar!`;
-    } else if (daysLeft <= 7) {
-        message = `Snart dags för kalas! Om bara ${daysLeft} dagar fyller ${name} ${yearsOld} år. Ska vi börja planera?`;
-    } else if (daysLeft <= 30) {
-        message = `Oj, vad tiden går! Om ${daysLeft} dagar fyller ${name} ${yearsOld} år. Dags att börja fundera på present?`;
+        message = `<span class="name">${name}</span>Nu är det bara 1 dag kvar tills ${name} fyller år! Imorgon blir det kalas med godis, lek och massvis av kul! Wohoo!`;
     } else {
-        message = `Det är ${daysLeft} dagar kvar tills ${name} fyller ${yearsOld} år. Vi har gott om tid att planera något riktigt kul!`;
+        message = `<span class="name">${name}</span>Nu är det bara ${daysLeft} dagar kvar tills ${name} fyller år! Då blir det kalas med godis, lek och massvis av kul! Wohoo!`;
     }
     
     document.getElementById('result').innerHTML = message;
