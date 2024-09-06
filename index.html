@@ -7,14 +7,36 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            transition: background-color 0.5s;
             overflow: hidden;
+            transition: background 0.5s;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: linear-gradient(45deg, #f0f8ff, #f0f8ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        body.vera-theme::before {
+            background: linear-gradient(45deg, #800080, #FFB6C1);
+        }
+        body.yngve-theme::before {
+            background: linear-gradient(45deg, #4169E1, #FFA500);
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .container {
             background-color: rgba(255, 255, 255, 0.8);
@@ -66,18 +88,8 @@
             pointer-events: none;
             transition: opacity 0.5s;
             opacity: 0;
-            font-size: 50px;
         }
-        body.vera-theme {
-            background-color: #FFD1DC;
-        }
-        body.yngve-theme {
-            background-color: #90EE90;
-        }
-        body.vera-theme .unicorn {
-            opacity: 1;
-        }
-        body.yngve-theme .minecraft {
+        body.vera-theme .vera, body.yngve-theme .yngve {
             opacity: 1;
         }
         @keyframes float {
@@ -101,23 +113,31 @@
         <div id="result">Click a button to see birthday info</div>
     </div>
 
-    <div class="theme-element unicorn" style="top: 10%; left: 10%; animation: float 3s infinite alternate;">🦄</div>
-    <div class="theme-element unicorn" style="top: 20%; right: 15%; animation: float 3.5s infinite alternate-reverse;">🌈</div>
-    <div class="theme-element unicorn" style="bottom: 15%; left: 20%; animation: float 4s infinite alternate;">🎠</div>
-    <div class="theme-element unicorn" style="bottom: 25%; right: 25%; animation: float 3.2s infinite alternate-reverse;">🌟</div>
-    <div class="theme-element unicorn" style="top: 40%; left: 30%; animation: float 3.7s infinite alternate;">🍭</div>
-    <div class="theme-element unicorn" style="top: 60%; right: 10%; animation: float 4.2s infinite alternate-reverse;">🦋</div>
-    <div class="theme-element unicorn" style="bottom: 40%; left: 15%; animation: float 3.9s infinite alternate;">🌸</div>
-    <div class="theme-element unicorn" style="top: 70%; left: 40%; animation: float 4.5s infinite alternate-reverse;">🧚</div>
+    <div class="theme-element vera" style="top: 10%; left: 10%; font-size: 50px; animation: float 3s infinite alternate;">🦄</div>
+    <div class="theme-element vera" style="top: 20%; right: 15%; font-size: 40px; animation: float 3.5s infinite alternate-reverse;">🌈</div>
+    <div class="theme-element vera" style="bottom: 15%; left: 20%; font-size: 45px; animation: float 4s infinite alternate;">🎠</div>
+    <div class="theme-element vera" style="bottom: 25%; right: 25%; font-size: 35px; animation: float 3.2s infinite alternate-reverse;">🌟</div>
+    <div class="theme-element vera" style="top: 40%; left: 30%; font-size: 55px; animation: float 3.7s infinite alternate;">🍭</div>
+    <div class="theme-element vera" style="top: 60%; right: 10%; font-size: 30px; animation: float 4.2s infinite alternate-reverse;">🦋</div>
+    <div class="theme-element vera" style="bottom: 40%; left: 15%; font-size: 40px; animation: float 3.9s infinite alternate;">🌸</div>
+    <div class="theme-element vera" style="top: 70%; left: 40%; font-size: 50px; animation: float 4.5s infinite alternate-reverse;">🧚</div>
+    <div class="theme-element vera" style="top: 30%; left: 50%; font-size: 45px; animation: float 3.3s infinite alternate;">🍬</div>
+    <div class="theme-element vera" style="bottom: 20%; right: 40%; font-size: 40px; animation: float 4.1s infinite alternate-reverse;">🎂</div>
+    <div class="theme-element vera" style="top: 50%; right: 20%; font-size: 35px; animation: float 3.8s infinite alternate;">🎈</div>
+    <div class="theme-element vera" style="bottom: 35%; left: 25%; font-size: 50px; animation: float 4.3s infinite alternate-reverse;">🍰</div>
 
-    <div class="theme-element minecraft" style="top: 15%; left: 25%; animation: bounce 2s infinite alternate;">🧱</div>
-    <div class="theme-element minecraft" style="bottom: 20%; right: 20%; animation: bounce 2.3s infinite alternate-reverse;">⛏️</div>
-    <div class="theme-element minecraft" style="top: 30%; right: 30%; animation: bounce 2.5s infinite alternate;">🦖</div>
-    <div class="theme-element minecraft" style="bottom: 30%; left: 35%; animation: bounce 2.2s infinite alternate-reverse;">🧟</div>
-    <div class="theme-element minecraft" style="top: 50%; left: 15%; animation: bounce 2.7s infinite alternate;">🦕</div>
-    <div class="theme-element minecraft" style="bottom: 10%; right: 35%; animation: bounce 2.4s infinite alternate-reverse;">🐉</div>
-    <div class="theme-element minecraft" style="top: 65%; right: 15%; animation: bounce 2.6s infinite alternate;">🔥</div>
-    <div class="theme-element minecraft" style="bottom: 45%; left: 10%; animation: bounce 2.1s infinite alternate-reverse;">⚡</div>
+    <div class="theme-element yngve" style="top: 15%; left: 25%; font-size: 45px; animation: bounce 2s infinite alternate;">🧱</div>
+    <div class="theme-element yngve" style="bottom: 20%; right: 20%; font-size: 50px; animation: bounce 2.3s infinite alternate-reverse;">⛏️</div>
+    <div class="theme-element yngve" style="top: 30%; right: 30%; font-size: 55px; animation: bounce 2.5s infinite alternate;">🦖</div>
+    <div class="theme-element yngve" style="bottom: 30%; left: 35%; font-size: 40px; animation: bounce 2.2s infinite alternate-reverse;">🧟</div>
+    <div class="theme-element yngve" style="top: 50%; left: 15%; font-size: 60px; animation: bounce 2.7s infinite alternate;">🦕</div>
+    <div class="theme-element yngve" style="bottom: 10%; right: 35%; font-size: 45px; animation: bounce 2.4s infinite alternate-reverse;">🐉</div>
+    <div class="theme-element yngve" style="top: 65%; right: 15%; font-size: 35px; animation: bounce 2.6s infinite alternate;">🔥</div>
+    <div class="theme-element yngve" style="bottom: 45%; left: 10%; font-size: 40px; animation: bounce 2.1s infinite alternate-reverse;">⚡</div>
+    <div class="theme-element yngve" style="top: 25%; left: 40%; font-size: 50px; animation: bounce 2.8s infinite alternate;">🎮</div>
+    <div class="theme-element yngve" style="bottom: 25%; right: 30%; font-size: 45px; animation: bounce 2.2s infinite alternate-reverse;">🦁</div>
+    <div class="theme-element yngve" style="top: 55%; right: 25%; font-size: 40px; animation: bounce 2.9s infinite alternate;">🌋</div>
+    <div class="theme-element yngve" style="bottom: 40%; left: 30%; font-size: 55px; animation: bounce 2.3s infinite alternate-reverse;">🌠</div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
