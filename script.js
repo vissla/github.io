@@ -27,7 +27,7 @@ function showBirthdayInfo(name, birthday) {
     
     const resultElement = document.getElementById('result');
     resultElement.innerHTML = message;
-    resultElement.style.display = 'block';
+    resultElement.style.display = 'block';  // Make sure the card is visible
     
     // Change theme
     document.body.className = name.toLowerCase() + '-theme';
@@ -44,11 +44,24 @@ function showBirthdayInfo(name, birthday) {
     };
 
     const icons = [...commonIcons, ...themeIcons[name.toLowerCase()]];
-    for (let i = 0; i < 100; i++) {  // Doubled from 50 to 100
+    for (let i = 0; i < 100; i++) {
         const icon = icons[Math.floor(Math.random() * icons.length)];
         const element = document.createElement('div');
         element.className = `theme-element ${name.toLowerCase()}`;
         element.style.cssText = `
             top: ${Math.random() * 100}%;
             left: ${Math.random() * 100}%;
-            font-size: ${15 + Math.random() * 30}px;  // Slightly reduce
+            font-size: ${15 + Math.random() * 30}px;
+            animation: ${Math.random() > 0.5 ? 'float' : 'bounce'} ${2 + Math.random() * 3}s infinite alternate ${Math.random() * -5}s;
+        `;
+        element.textContent = icon;
+        document.body.appendChild(element);
+    }
+
+    // Trigger confetti
+    confetti({
+        particleCount: 200,
+        spread: 70,
+        origin: { y: 0.6 }
+    });
+}
