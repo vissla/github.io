@@ -13,9 +13,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.5s;
         }
         .container {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             padding: 30px;
@@ -51,28 +52,12 @@
             background-color: #45a049;
         }
         #result {
-            background-color: #e9f5f5;
+            background-color: rgba(233, 245, 245, 0.8);
             border-radius: 10px;
             padding: 20px;
             margin-top: 20px;
             font-size: 18px;
             color: #333;
         }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>Birthday Countdown</h1>
-        <div class="button-group">
-            <button onclick="showBirthdayInfo('Vera', '2018-11-28')">Vera</button>
-            <button onclick="showBirthdayInfo('Yngve', '2016-04-07')">Yngve</button>
-            <button onclick="showBirthdayInfo('Sara', '2022-05-01')">Sara</button>
-        </div>
-        <div id="result">Click a button to see birthday info</div>
-    </div>
-
-    <script>
-        // ... (keep the existing JavaScript code here) ...
-    </script>
-</body>
-</html>
+        .theme-element {
+            position: fixe
