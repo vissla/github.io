@@ -25,7 +25,9 @@ function showBirthdayInfo(name, birthday) {
         message = `<span class="name">${name}</span>Nu är det bara ${daysLeft} dagar kvar tills ${name} fyller år! Då blir det kalas med godis, lek och massvis av kul! Wohoo!`;
     }
     
-    document.getElementById('result').innerHTML = message;
+    const resultElement = document.getElementById('result');
+    resultElement.innerHTML = message;
+    resultElement.style.display = 'block';
     
     // Change theme
     document.body.className = name.toLowerCase() + '-theme';
@@ -42,24 +44,11 @@ function showBirthdayInfo(name, birthday) {
     };
 
     const icons = [...commonIcons, ...themeIcons[name.toLowerCase()]];
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {  // Doubled from 50 to 100
         const icon = icons[Math.floor(Math.random() * icons.length)];
         const element = document.createElement('div');
         element.className = `theme-element ${name.toLowerCase()}`;
         element.style.cssText = `
             top: ${Math.random() * 100}%;
             left: ${Math.random() * 100}%;
-            font-size: ${20 + Math.random() * 40}px;
-            animation: ${Math.random() > 0.5 ? 'float' : 'bounce'} ${2 + Math.random() * 3}s infinite alternate ${Math.random() * -5}s;
-        `;
-        element.textContent = icon;
-        document.body.appendChild(element);
-    }
-
-    // Trigger confetti
-    confetti({
-        particleCount: 100,
-        spread: 70,
-        origin: { y: 0.6 }
-    });
-}
+            font-size: ${15 + Math.random() * 30}px;  // Slightly reduce
