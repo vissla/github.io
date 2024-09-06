@@ -64,7 +64,7 @@
         .theme-element {
             position: absolute;
             pointer-events: none;
-            transition: opacity 0.5s, transform 1s;
+            transition: opacity 0.5s;
             opacity: 0;
             font-size: 50px;
         }
@@ -76,11 +76,9 @@
         }
         body.vera-theme .unicorn {
             opacity: 1;
-            animation: float 3s infinite alternate;
         }
         body.yngve-theme .minecraft {
             opacity: 1;
-            animation: bounce 0.5s infinite alternate;
         }
         @keyframes float {
             0% { transform: translateY(0px) rotate(0deg); }
@@ -103,23 +101,23 @@
         <div id="result">Click a button to see birthday info</div>
     </div>
 
-    <div class="theme-element unicorn" style="top: 10%; left: 10%;">🦄</div>
-    <div class="theme-element unicorn" style="top: 20%; right: 15%;">🌈</div>
-    <div class="theme-element unicorn" style="bottom: 15%; left: 20%;">🎠</div>
-    <div class="theme-element unicorn" style="bottom: 25%; right: 25%;">🌟</div>
-    <div class="theme-element unicorn" style="top: 40%; left: 30%;">🍭</div>
-    <div class="theme-element unicorn" style="top: 60%; right: 10%;">🦋</div>
-    <div class="theme-element unicorn" style="bottom: 40%; left: 15%;">🌸</div>
-    <div class="theme-element unicorn" style="top: 70%; left: 40%;">🧚</div>
+    <div class="theme-element unicorn" style="top: 10%; left: 10%; animation: float 3s infinite alternate;">🦄</div>
+    <div class="theme-element unicorn" style="top: 20%; right: 15%; animation: float 3.5s infinite alternate-reverse;">🌈</div>
+    <div class="theme-element unicorn" style="bottom: 15%; left: 20%; animation: float 4s infinite alternate;">🎠</div>
+    <div class="theme-element unicorn" style="bottom: 25%; right: 25%; animation: float 3.2s infinite alternate-reverse;">🌟</div>
+    <div class="theme-element unicorn" style="top: 40%; left: 30%; animation: float 3.7s infinite alternate;">🍭</div>
+    <div class="theme-element unicorn" style="top: 60%; right: 10%; animation: float 4.2s infinite alternate-reverse;">🦋</div>
+    <div class="theme-element unicorn" style="bottom: 40%; left: 15%; animation: float 3.9s infinite alternate;">🌸</div>
+    <div class="theme-element unicorn" style="top: 70%; left: 40%; animation: float 4.5s infinite alternate-reverse;">🧚</div>
 
-    <div class="theme-element minecraft" style="top: 15%; left: 25%;">🧱</div>
-    <div class="theme-element minecraft" style="bottom: 20%; right: 20%;">⛏️</div>
-    <div class="theme-element minecraft" style="top: 30%; right: 30%;">🗡️</div>
-    <div class="theme-element minecraft" style="bottom: 30%; left: 35%;">🧟</div>
-    <div class="theme-element minecraft" style="top: 50%; left: 15%;">🐑</div>
-    <div class="theme-element minecraft" style="bottom: 10%; right: 35%;">🌳</div>
-    <div class="theme-element minecraft" style="top: 65%; right: 15%;">🏹</div>
-    <div class="theme-element minecraft" style="bottom: 45%; left: 10%;">🧨</div>
+    <div class="theme-element minecraft" style="top: 15%; left: 25%; animation: bounce 2s infinite alternate;">🧱</div>
+    <div class="theme-element minecraft" style="bottom: 20%; right: 20%; animation: bounce 2.3s infinite alternate-reverse;">⛏️</div>
+    <div class="theme-element minecraft" style="top: 30%; right: 30%; animation: bounce 2.5s infinite alternate;">🦖</div>
+    <div class="theme-element minecraft" style="bottom: 30%; left: 35%; animation: bounce 2.2s infinite alternate-reverse;">🧟</div>
+    <div class="theme-element minecraft" style="top: 50%; left: 15%; animation: bounce 2.7s infinite alternate;">🦕</div>
+    <div class="theme-element minecraft" style="bottom: 10%; right: 35%; animation: bounce 2.4s infinite alternate-reverse;">🐉</div>
+    <div class="theme-element minecraft" style="top: 65%; right: 15%; animation: bounce 2.6s infinite alternate;">🔥</div>
+    <div class="theme-element minecraft" style="bottom: 45%; left: 10%; animation: bounce 2.1s infinite alternate-reverse;">⚡</div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
